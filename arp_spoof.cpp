@@ -158,6 +158,8 @@ int main(int argc, char* argv[]) {
     for (int i = 28; i < 32; i++) rp_packet[i] = sender_ip[i - 28];
     for (int i = 32; i < 38; i++) rp_packet[i] = sen_mac[i - 32];
     for (int i = 38; i < 42; i++) rp_packet[i] = target_ip[i - 38];
+
+    pcap_sendpacket(handle, rp_packet, 42);
 }
 
 
